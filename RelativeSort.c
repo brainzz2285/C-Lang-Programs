@@ -3,21 +3,22 @@
 
 void relativeSort(int *arr,int *order,int size1,int size2)
 {
-    int arrpos=0,i,j;
+    int arrpos=0,i,j,temp;
+    // Relative Sort
     for(i=0;i<size2;i++)
     {
         for(j=0;j<size1;j++)
         {
             if(arr[j]==order[i])
             {
-                int temp=arr[j];
+                temp=arr[j];
                 arr[j]=arr[arrpos];
                 arr[arrpos]=temp;
                 arrpos++;
             }
         }    
     }
-    
+    // Normal Bubble Sort for the rest of the elements
     for(i=arrpos;i<size1-1;i++)
     {
         for(j=arrpos;j<size1-1;j++)
